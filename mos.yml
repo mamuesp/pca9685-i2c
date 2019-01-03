@@ -1,0 +1,32 @@
+author: Manfred Müller-Späth "mamuesp" <fms1961@gmail.com>
+type: lib
+description: An I2C lib to use PCA9685
+version: 0.1
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+config_schema:
+  - ["i2c.enable", true]
+  - ["pca9685", "o", {title: "Settings for the useage of the PCA9685 chip"}]
+  - ["pca9685.enable", "b", true, {title: "Enable the use of this library"}]
+  - ["pca9685.addr", "i", 0x40, {title: "I2C default address of the chip"}]
+
+filesystem:
+  - mjs_fs
+
+sources:
+  - src
+
+includes:
+  - include
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/core
+  - origin: https://github.com/mongoose-os-libs/i2c
+
+tags:
+  - c
+  - docs:misc:Empty
+
+manifest_version: 2017-09-29
